@@ -1,7 +1,11 @@
+// src/middlewares/authMiddleware.js
 import jwt from "jsonwebtoken";
 import { AppError } from "../utils/errorHandler.js";
 
-export const protect = (req, res, next) => {
+/**
+ * Middleware: Verifies JWT and attaches user payload to request.
+ */
+export const authMiddleware = (req, res, next) => {
   const authHeader = req.headers.authorization;
 
   if (!authHeader || !authHeader.startsWith("Bearer ")) {

@@ -8,3 +8,6 @@ export const authorizeRoles = (...roles) => {
     next();
   };
 };
+
+// alias for compatibility
+export const roleMiddleware = authorizeRoles;
